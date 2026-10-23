@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Sidebar from "../components/Sidebar";
 import TotalSalesCard from "../components/TotalSalesCard";
 import CoustomersCard from "../components/CustomersCard";
+import OrdersCard from "../components/OrdersCard";
 
 function Dashboard() {
   const { t, i18n } = useTranslation();
@@ -48,48 +49,8 @@ function Dashboard() {
 
           <TotalSalesCard />
           <CoustomersCard/>
-          
-
-          
-          <div className="bg-white border rounded-xl p-6">
-            <div className="flex justify-between">
-              <div>
-                <h2 className="font-bold">
-                  {t("customers")}
-                </h2>
-
-                <p className="text-xs text-gray-500 uppercase">
-                  {t("thisMonth")}
-                </p>
-              </div>
-
-              <p className="text-2xl font-bold">
-                2,571
-              </p>
-            </div>
-          </div>
-
-         
-          <div className="bg-white border rounded-xl p-6">
-            <div className="flex justify-between">
-              <div>
-                <h2 className="font-bold">
-                  {t("orders")}
-                </h2>
-
-                <p className="text-xs text-gray-500 uppercase">
-                  Monthly goals: 1,000
-                </p>
-              </div>
-
-              <p className="text-2xl font-bold">
-                734
-              </p>
-            </div>
-          </div>
-
+          <OrdersCard/>
         </div>
-
       </main>
     </div>
   );
