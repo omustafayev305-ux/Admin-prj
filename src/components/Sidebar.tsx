@@ -24,7 +24,7 @@ function Sidebar () {
         </div>
         <div className="flex items-center gap-3 px-4 py-3">
         <InboxOutlined/>
-        <span>{t("product")}</span>
+        <span>{t("Product")}</span>
         </div>
        <div className="flex items-center gap-3 px-4 py-3">
          <ShoppingCartOutlined/>

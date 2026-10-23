@@ -28,7 +28,7 @@ function TotalSalesCard() {
       <div className="mt-6">
         <SalesChart />
       </div>
-
+        
     </div>
   );
 }

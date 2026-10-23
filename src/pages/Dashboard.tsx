@@ -2,6 +2,7 @@ import { Button } from "antd";
 import { useTranslation } from "react-i18next";
 import Sidebar from "../components/Sidebar";
 import TotalSalesCard from "../components/TotalSalesCard";
+import CoustomersCard from "../components/CustomersCard";
 
 function Dashboard() {
   const { t, i18n } = useTranslation();
@@ -46,6 +47,8 @@ function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           <TotalSalesCard />
+          <CoustomersCard/>
+          
 
           
           <div className="bg-white border rounded-xl p-6">
