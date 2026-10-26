@@ -4,6 +4,8 @@ import Sidebar from "../components/Sidebar";
 import TotalSalesCard from "../components/TotalSalesCard";
 import CoustomersCard from "../components/CustomersCard";
 import OrdersCard from "../components/OrdersCard";
+import BestSellingCard from "../components/BestSellingCard";
+import RecentOrders from "../components/RecentOrders";
 
 function Dashboard() {
   const { t, i18n } = useTranslation();
@@ -50,6 +52,8 @@ function Dashboard() {
           <TotalSalesCard />
           <CoustomersCard/>
           <OrdersCard/>
+          <BestSellingCard/>
+          <RecentOrders/>
         </div>
       </main>
     </div>
