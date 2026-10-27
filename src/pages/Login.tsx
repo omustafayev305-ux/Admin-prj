@@ -1,7 +1,8 @@
 import{Button,Form,Input,} from "antd"
+import { useNavigate } from "react-router-dom";
 
 function Login () {
-
+ const navigate = useNavigate()
   return (
      <div className="min-h-screen flex justify-center bg-[#f5f5f5]">
       <div className="w-full max-w-[550px] min-h-screen bg-white px-12 pt-10">
@@ -14,6 +15,7 @@ function Login () {
         layout="vertical"
         onFinish={(values) => {
          console.log(values)
+         navigate("/dashboard")
         }}
         >
       <Form.Item 
@@ -36,20 +38,20 @@ function Login () {
        
         />
        </Form.Item>
-       <Form.Item
-       label="Password"
-       name="password"
-         rules={[
-        {
-          required:true,
-          message:"Duzgun sifre daxil edin",
-        },
-        {
-          type:"email",
-          message:"Duzgun sifre daxil edin"
-        }
-       ]}
-       >
+      <Form.Item
+  label="Password"
+  name="password"
+  rules={[
+    {
+      required: true,
+      message: "Sifre daxil edin",
+    },
+    {
+      min: 6,
+      message: "Sifre minimum 6 simvol olmalidir",
+    },
+  ]}
+>
         <Input.Password
         size="large"
         className="h-16"

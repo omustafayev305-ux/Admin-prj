@@ -7,7 +7,7 @@ import {
   SettingOutlined,
   PlusOutlined,
 } from "@ant-design/icons"
-
+import { Link } from "react-router-dom";
 import{useTranslation} from "react-i18next"
 
 function Sidebar () {
@@ -18,13 +18,23 @@ function Sidebar () {
       Admin
       </h1>
       <div className="flex flex-col gap3">
-        <div className="flex items-center gap-3 bg-gray-100 px-4 py-3 rounded-lg">
-          <AppstoreOutlined/>
-          <span>{t("dashboard")}</span> 
+        <div>
+        <Link
+        to="/Dashboard"
+       className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100"
+       >
+        <AppstoreOutlined/>
+        <span>{t("Dashboard")}</span>
+        </Link>
         </div>
-        <div className="flex items-center gap-3 px-4 py-3">
+        <div>
+        <Link
+        to="/Products"
+       className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100"
+       >
         <InboxOutlined/>
-        <span>{t("Product")}</span>
+        <span>{t("Products")}</span>
+        </Link>
         </div>
        <div className="flex items-center gap-3 px-4 py-3">
          <ShoppingCartOutlined/>
