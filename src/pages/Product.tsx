@@ -1,15 +1,24 @@
 import { Breadcrumb,Button,Input,Table} from "antd"
 import Sidebar from "../components/Sidebar";
 import { SearchOutlined } from "@ant-design/icons";
-
+import Product1 from "../assets/Product1.png"
+import Product2 from "../assets/Product2.png"
+import Product3 from "../assets/Product3.png"
+import Product4 from "../assets/Product4.png"
+import Product5 from "../assets/Product5.png"
+import Product6 from "../assets/Product6.png"
+import Product7 from "../assets/Product7.png"
+import Product8 from "../assets/Product8.png"
 
 function Products () {
   const columns = [
     {
       title:"Name",
       dataIndex:"name",
-      key:"name"
+      key:"name",
+      
     },
+
     {
       title:"SKU",
       dataIndex:"sku",
@@ -39,7 +48,19 @@ function Products () {
   const data = [
     {
       key:"1",
-      name:"Raw Black T-Shirt Lineup",
+        name: (
+    <div className="flex items-center gap-3">
+      <img
+        src={Product1}
+        alt="Raw Black T-Shirt Lineup"
+        className="w-12 h-12 object-contain"
+      />
+
+      <span>
+        Raw Black T-Shirt Lineup
+      </span>
+      </div>
+      ),
       sku:"47514501",
       price:"$75.00",
       stock:"In Stock",
@@ -48,7 +69,19 @@ function Products () {
     },
     {
       key:"2",
-      name:"Classic Monochrome Tees",
+        name: (
+    <div className="flex items-center gap-3">
+      <img
+        src={Product2}
+        alt="Raw Black T-Shirt Lineup"
+        className="w-12 h-12 object-contain"
+      />
+
+      <span>
+        Raw Black T-Shirt Lineup
+      </span>
+      </div>
+      ),
       sku:"47514501",
       price:"$35.00",
       stock:"In Stock",
@@ -57,7 +90,19 @@ function Products () {
     },
     {
       key:"3",
-      name:"Monochromatic Wardrobe",
+       name: (
+    <div className="flex items-center gap-3">
+      <img
+        src={Product3}
+        alt="Raw Black T-Shirt Lineup"
+        className="w-12 h-12 object-contain"
+      />
+
+      <span>
+        Raw Black T-Shirt Lineup
+      </span>
+      </div>
+      ),
       sku:"47514501",
       price:"$27.00",
       stock:"In Stock",
@@ -66,7 +111,19 @@ function Products () {
     },
        {
       key:"4",
-      name:"Essential Naturals",
+        name: (
+    <div className="flex items-center gap-3">
+      <img
+        src={Product4}
+        alt="Raw Black T-Shirt Lineup"
+        className="w-12 h-12 object-contain"
+      />
+
+      <span>
+        Raw Black T-Shirt Lineup
+      </span>
+      </div>
+      ),
       sku:"47514501",
       price:"$22.00",
       stock:"In Stock",
@@ -76,7 +133,19 @@ function Products () {
   
      {
       key:"4",
-      name:"UTRANEET Black",
+        name: (
+    <div className="flex items-center gap-3">
+      <img
+        src={Product5}
+        alt="Raw Black T-Shirt Lineup"
+        className="w-12 h-12 object-contain"
+      />
+
+      <span>
+        Raw Black T-Shirt Lineup
+      </span>
+      </div>
+      ),
       sku:"47514501",
       price:"$43.00",
       stock:"In Stock",
@@ -85,7 +154,19 @@ function Products () {
     },
      {
       key:"4",
-      name:"Elegant Ebony sweetshirts",
+        name: (
+    <div className="flex items-center gap-3">
+      <img
+        src={Product6}
+        alt="Raw Black T-Shirt Lineup"
+        className="w-12 h-12 object-contain"
+      />
+
+      <span>
+        Raw Black T-Shirt Lineup
+      </span>
+      </div>
+      ),
       sku:"47514501",
       price:"$35.00",
       stock:"In Stock",
@@ -94,16 +175,40 @@ function Products () {
     },
      {
       key:"4",
-      name:"Sweet and Cozy Black",
+        name: (
+    <div className="flex items-center gap-3">
+      <img
+        src={Product7}
+        alt="Raw Black T-Shirt Lineup"
+        className="w-12 h-12 object-contain"
+      />
+
+      <span>
+        Raw Black T-Shirt Lineup
+      </span>
+      </div>
+      ),
       sku:"47514501",
       price:"$57.00",
       stock:"In Stock",
       categories:"T-shirt",
-      action:"..."
+      action:"...",
+      
     },
      {
-      key:"4",
-      name:"MOCKUP Black",
+       name: (
+    <div className="flex items-center gap-3">
+      <img
+        src={Product1}
+        alt="Raw Black T-Shirt Lineup"
+        className="w-12 h-12 object-contain"
+      />
+
+      <span>
+        Raw Black T-Shirt Lineup
+      </span>
+      </div>
+      ),
       sku:"47514501",
       price:"$30.00",
       stock:"In Stock",
