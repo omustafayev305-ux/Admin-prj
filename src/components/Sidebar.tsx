@@ -45,14 +45,24 @@ function Sidebar () {
         <span>{t("Orders")}</span>
         </Link>
         </div>
-        <div className="flex items-center gap-3 px-4 py-3">
-          <TeamOutlined />
-          <span>{t("customers")}</span>
+         <div>
+        <Link
+        to="/Coustomers"
+       className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100"
+       >
+        <TeamOutlined/>
+        <span>{t("Coustomers")}</span>
+        </Link>
         </div>
 
-        <div className="flex items-center gap-3 px-4 py-3">
-          <StarOutlined />
-          <span>{t("reviews")}</span>
+        <div>
+        <Link
+        to="/Reviews"
+       className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100"
+       >
+        <StarOutlined/>
+        <span>{t("Reviews")}</span>
+        </Link>
         </div>
 
         <div className="flex items-center gap-3 px-4 py-3">
