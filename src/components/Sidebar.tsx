@@ -65,9 +65,14 @@ function Sidebar () {
         </Link>
         </div>
 
-        <div className="flex items-center gap-3 px-4 py-3">
-          <SettingOutlined />
-          <span>{t("settings")}</span>
+       <div>
+        <Link
+        to="/Settings"
+       className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100"
+       >
+        <SettingOutlined/>
+        <span>{t("Settings")}</span>
+        </Link>
         </div>
 
         <div className="border-t mt-8 pt-8">
