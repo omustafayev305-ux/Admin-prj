@@ -9,8 +9,18 @@ import Product5 from "../assets/Product5.png"
 import Product6 from "../assets/Product6.png"
 import Product7 from "../assets/Product7.png"
 import Product8 from "../assets/Product8.png"
-
+import {useEffect} from "react"
+import {useDispatch,useSelector} from "react-redux"
+import {fetchProducts} from "../redux/productsSlice";
+import type {AppDispatch,RootState} from "../redux/store"
 function Products () {
+  const dispatch=useDispatch<AppDispatch>()
+  const {products,loading,error} = useSelector(
+    (state: RootState)=> state.products
+  )
+  useEffect(()=> {
+    dispatch(fetchProducts())
+  },[dispatch])
   const columns = [
     {
       title:"Name",
@@ -217,6 +227,24 @@ function Products () {
     },
   ]
   return(
+     <div>
+    {products.map((product) => (
+      <div key={product.id}>
+        <img
+          src={product.thumbnail}
+          alt={product.title}
+          className="w-20 h-20 object-contain"
+        />
+
+        <h2>{product.title}</h2>
+
+        <p>${product.price}</p>
+
+        <p>{product.category}</p>
+      </div>
+    ))}
+  </div>
+);
      <div className="flex min-h-screen bg-[#f6f6f6]">
       <Sidebar />
 
@@ -266,6 +294,6 @@ function Products () {
         </div>
       </main>
     </div>
-  )
+  
 } 
 export default Products

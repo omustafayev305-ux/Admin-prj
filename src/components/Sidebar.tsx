@@ -41,7 +41,7 @@ function Sidebar () {
         to="/Orders"
        className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100"
        >
-        <InboxOutlined/>
+        < ShoppingCartOutlined/>
         <span>{t("Orders")}</span>
         </Link>
         </div>
