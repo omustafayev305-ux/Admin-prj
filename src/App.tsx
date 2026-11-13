@@ -6,18 +6,21 @@ import Orders from "./pages/Orders"
 import Coustomers from "./pages/Coustomers";
 import Reviews from "./pages/Reviews";
 import Settings from "./pages/Settings";
-
+import AddProduct from "./pages/AddProduct";
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/products" element={<Products/>}/>
-      <Route path="/orders" element={<Orders/>}/>
-      <Route path="/coustomers" element={<Coustomers/>}/>
-      <Route path="/reviews" element={<Reviews/>}/>
-      <Route path="/settings" element={<Settings/>}/>
+      <Route path="/products" element={<Products />} />
+      <Route path="/orders" element={<Orders />} />
+      <Route path="/coustomers" element={<Coustomers />} />
+      <Route path="/reviews" element={<Reviews />} />
+      <Route path="/products/add" element={<AddProduct />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/products/:id" element={<ProductDetails />} />
     </Routes>
   );
 }

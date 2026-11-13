@@ -39,10 +39,10 @@ function Login () {
         />
        </Form.Item>
       <Form.Item
-  label="Password"
-  name="password"
-  rules={[
-    {
+       label="Password"
+       name="password"
+        rules={[
+     {
       required: true,
       message: "Sifre daxil edin",
     },

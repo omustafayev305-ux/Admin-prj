@@ -1,28 +1,26 @@
-import {Breadcrumb,Button,Form,Input} from "antd"
-import Sidebar from "../components/Sidebar"
+import { Breadcrumb, Button, Form, Input } from 'antd';
+import Sidebar from '../components/Sidebar';
 
 function Settings() {
-  return(
+  return (
     <div className="flex min-h-screen bg-[#f5f5f5]">
-      <Sidebar/>
+      <Sidebar />
       <main className="flex-1 p-10">
         <div className="mb-8">
           <Breadcrumb
-          items={[
-            {
-              title:"Admin"
-            },
-            {
-             title:"Settings"
-            }
-          ]}
+            items={[
+              {
+                title: 'Admin',
+              },
+              {
+                title: 'Settings',
+              },
+            ]}
           />
         </div>
-         <div className="bg-white border rounded-xl overflow-hidden">
+        <div className="bg-white border rounded-xl overflow-hidden">
           <div className="p-6 border-b">
-            <h1 className="text-xl font-bold">
-              Settings
-            </h1>
+            <h1 className="text-xl font-bold">Settings</h1>
           </div>
 
           <div className="p-8">
@@ -33,24 +31,15 @@ function Settings() {
                 console.log(values);
               }}
             >
-              <Form.Item
-                label="Site Name"
-                name="siteName"
-              >
+              <Form.Item label="Site Name" name="siteName">
                 <Input className="h-11" />
               </Form.Item>
 
-              <Form.Item
-                label="Support Email"
-                name="supportEmail"
-              >
+              <Form.Item label="Support Email" name="supportEmail">
                 <Input className="h-11" />
               </Form.Item>
 
-              <Form.Item
-                label="Monthly Order Goal"
-                name="monthlyGoal"
-              >
+              <Form.Item label="Monthly Order Goal" name="monthlyGoal">
                 <Input className="h-11" />
               </Form.Item>
 
@@ -72,4 +61,3 @@ function Settings() {
 }
 
 export default Settings;
-        

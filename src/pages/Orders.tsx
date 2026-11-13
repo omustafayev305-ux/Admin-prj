@@ -9,9 +9,37 @@ import Product5 from "../assets/Product5.png"
 import Product6 from "../assets/Product6.png"
 import Product7 from "../assets/Product7.png"
 import Product8 from "../assets/Product8.png"
+import { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import type { AppDispatch, RootState } from '../redux/store';
+import { useNavigate } from 'react-router-dom';
+import {
+  fetchProducts,
+  updateProduct,
+  deleteProduct,
+  searchProduct,
+} from '../redux/productsSlice';
+import { fetchCarts } from "../redux/cartSlice";
+
+
 
 
 function Orders () {
+  const dispatch = useDispatch<AppDispatch>()
+  const{carts,loading,error} = useSelector(
+    (state:RootState)=>state.carts
+  )
+  useEffect(()=> {
+    dispatch(fetchCarts())
+  },[dispatch])
+  const tableData = carts.map((cart) => ({
+    key: cart.id,
+    userId: cart.userId,
+    total: cart.total,
+    discountedTotal: cart.discountedTotal,
+    totalProducts: cart.totalProducts,
+    totalQuantity: cart.totalquantity,
+  }));
   const columns=[
     {
       title:"Order",
@@ -220,7 +248,8 @@ function Orders () {
 
           <Table
             columns={columns}
-            dataSource={data}
+            dataSource={tableData}
+            loading={loading}
             pagination={{
               pageSize: 8,
             }}

@@ -1,251 +1,105 @@
-import { Breadcrumb,Button,Input,Table} from "antd"
+import { Breadcrumb, Button, Input, Table } from "antd";
 import Sidebar from "../components/Sidebar";
 import { SearchOutlined } from "@ant-design/icons";
-import Product1 from "../assets/Product1.png"
-import Product2 from "../assets/Product2.png"
-import Product3 from "../assets/Product3.png"
-import Product4 from "../assets/Product4.png"
-import Product5 from "../assets/Product5.png"
-import Product6 from "../assets/Product6.png"
-import Product7 from "../assets/Product7.png"
-import Product8 from "../assets/Product8.png"
-import {useEffect} from "react"
-import {useDispatch,useSelector} from "react-redux"
-import {fetchProducts} from "../redux/productsSlice";
-import type {AppDispatch,RootState} from "../redux/store"
-function Products () {
-  const dispatch=useDispatch<AppDispatch>()
-  const {products,loading,error} = useSelector(
-    (state: RootState)=> state.products
-  )
-  useEffect(()=> {
-    dispatch(fetchProducts())
-  },[dispatch])
-  const columns = [
-    {
-      title:"Name",
-      dataIndex:"name",
-      key:"name",
-      
-    },
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch, RootState } from "../redux/store";
+import {useNavigate} from "react-router-dom"
+import { fetchProducts, updateProduct,deleteProduct,searchProduct } from '../redux/productsSlice';
 
-    {
-      title:"SKU",
-      dataIndex:"sku",
-      key:"sku",
-    },
-    {
-      title:"Price",
-      dataIndex:"price",
-      key:"price",
-    },
-    {
-     title:"Stock",
-     dataIndex:"stock",
-     key:"stock"
-    },
-    {
-      title:"Categories",
-      dataIndex:"categories",
-      key:"categories",
-    },
-    {
-      title:"Action",
-      dataIndex:"action",
-      key:"action"
-    },
-  ];
-  const data = [
-    {
-      key:"1",
-        name: (
-    <div className="flex items-center gap-3">
-      <img
-        src={Product1}
-        alt="Raw Black T-Shirt Lineup"
-        className="w-12 h-12 object-contain"
-      />
+function Products() {
+    const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
-      <span>
-        Raw Black T-Shirt Lineup
-      </span>
-      </div>
-      ),
-      sku:"47514501",
-      price:"$75.00",
-      stock:"In Stock",
-      categories:"T-shirt,Men",
-      action:"..."
-    },
-    {
-      key:"2",
-        name: (
-    <div className="flex items-center gap-3">
-      <img
-        src={Product2}
-        alt="Raw Black T-Shirt Lineup"
-        className="w-12 h-12 object-contain"
-      />
+  const { products, loading, error } = useSelector(
+    (state: RootState) => state.products
+  );
 
-      <span>
-        Raw Black T-Shirt Lineup
-      </span>
-      </div>
-      ),
-      sku:"47514501",
-      price:"$35.00",
-      stock:"In Stock",
-      categories:"T-shirt,Men",
-      action:"..."
-    },
-    {
-      key:"3",
-       name: (
-    <div className="flex items-center gap-3">
-      <img
-        src={Product3}
-        alt="Raw Black T-Shirt Lineup"
-        className="w-12 h-12 object-contain"
-      />
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
-      <span>
-        Raw Black T-Shirt Lineup
-      </span>
-      </div>
-      ),
-      sku:"47514501",
-      price:"$27.00",
-      stock:"In Stock",
-      categories:"T-shirt",
-      action:"..."
-    },
-       {
-      key:"4",
-        name: (
-    <div className="flex items-center gap-3">
-      <img
-        src={Product4}
-        alt="Raw Black T-Shirt Lineup"
-        className="w-12 h-12 object-contain"
-      />
+  const tableData = products.map((product) => ({
+    key: product.id,
 
-      <span>
-        Raw Black T-Shirt Lineup
-      </span>
-      </div>
-      ),
-      sku:"47514501",
-      price:"$22.00",
-      stock:"In Stock",
-      categories:"T-shirt,Raw",
-      action:"..."
-    },
-  
-     {
-      key:"4",
-        name: (
-    <div className="flex items-center gap-3">
-      <img
-        src={Product5}
-        alt="Raw Black T-Shirt Lineup"
-        className="w-12 h-12 object-contain"
-      />
-
-      <span>
-        Raw Black T-Shirt Lineup
-      </span>
-      </div>
-      ),
-      sku:"47514501",
-      price:"$43.00",
-      stock:"In Stock",
-      categories:"T-shirt,Trend",
-      action:"..."
-    },
-     {
-      key:"4",
-        name: (
-    <div className="flex items-center gap-3">
-      <img
-        src={Product6}
-        alt="Raw Black T-Shirt Lineup"
-        className="w-12 h-12 object-contain"
-      />
-
-      <span>
-        Raw Black T-Shirt Lineup
-      </span>
-      </div>
-      ),
-      sku:"47514501",
-      price:"$35.00",
-      stock:"In Stock",
-      categories:"T-shirt",
-      action:"..."
-    },
-     {
-      key:"4",
-        name: (
-    <div className="flex items-center gap-3">
-      <img
-        src={Product7}
-        alt="Raw Black T-Shirt Lineup"
-        className="w-12 h-12 object-contain"
-      />
-
-      <span>
-        Raw Black T-Shirt Lineup
-      </span>
-      </div>
-      ),
-      sku:"47514501",
-      price:"$57.00",
-      stock:"In Stock",
-      categories:"T-shirt",
-      action:"...",
-      
-    },
-     {
-       name: (
-    <div className="flex items-center gap-3">
-      <img
-        src={Product1}
-        alt="Raw Black T-Shirt Lineup"
-        className="w-12 h-12 object-contain"
-      />
-
-      <span>
-        Raw Black T-Shirt Lineup
-      </span>
-      </div>
-      ),
-      sku:"47514501",
-      price:"$30.00",
-      stock:"In Stock",
-      categories:"T-shirt,Raw",
-      action:"..."
-    },
-  ]
-  return(
-     <div>
-    {products.map((product) => (
-      <div key={product.id}>
+    name: (
+      <div className="flex items-center gap-3">
         <img
           src={product.thumbnail}
           alt={product.title}
-          className="w-20 h-20 object-contain"
+          className="w-12 h-12 object-contain"
         />
 
-        <h2>{product.title}</h2>
-
-        <p>${product.price}</p>
-
-        <p>{product.category}</p>
+        <span
+          onClick={() => navigate(`/products/${product.id}`)}
+          className="cursor-pointer"
+        >
+          {product.title}
+        </span>
       </div>
-    ))}
-  </div>
-);
-     <div className="flex min-h-screen bg-[#f6f6f6]">
+    ),
+
+    sku: product.id,
+    price: `$${product.price}`,
+    stock: product.stock,
+    categories: product.category,
+    action: (
+      <div className="flex gap-2">
+        <Button
+          onClick={() =>
+            dispatch(
+              updateProduct({
+                id: product.id,
+                price: product.price + 10,
+              }),
+            )
+          }
+        >
+          Edit
+        </Button>
+        <Button
+        danger
+          onClick={() =>
+            dispatch(deleteProduct(product.id))
+          }
+        >
+        Delete
+        </Button>
+      </div>
+    ),
+  }));
+
+ const columns = [
+   {
+     title: 'Order',
+     dataIndex: 'userId',
+     key: 'userId',
+   },
+   {
+     title: 'Total',
+     dataIndex: 'total',
+     key: 'total',
+   },
+   {
+     title: 'Discounted Total',
+     dataIndex: 'discountedTotal',
+     key: 'discountedTotal',
+   },
+   {
+     title: 'Products',
+     dataIndex: 'totalProducts',
+     key: 'totalProducts',
+   },
+   {
+     title: 'Quantity',
+     dataIndex: 'totalQuantity',
+     key: 'totalQuantity',
+   },
+ ];
+
+
+  return (
+    <div className="flex min-h-screen bg-[#f6f6f6]">
       <Sidebar />
 
       <main className="flex-1 p-10">
@@ -253,40 +107,48 @@ function Products () {
           <Breadcrumb
             items={[
               {
-                title: "Admin",
+                title: 'Admin',
               },
               {
-                title: "Products",
+                title: 'Products',
               },
             ]}
           />
         </div>
 
-        <div className="bg-white  overflow-hidden">
+        <div className="bg-white overflow-hidden">
           <div className="flex justify-between items-center p-6 border-b">
-            <h1 className="text-xl font-bold">
-              Products
-            </h1>
+            <h1 className="text-xl font-bold">Products</h1>
 
             <div className="flex gap-3">
               <Button
                 type="primary"
                 className="!bg-[#111827]"
+                onClick={() => navigate('/products/add')}
               >
                 Add product
               </Button>
 
               <Input
-                prefix={<SearchOutlined/>}
+                prefix={<SearchOutlined />}
                 placeholder="Search products"
                 className="w-52"
+                onChange={(e) => {
+                  const value = e.target.value;
+
+                  if (value.trim()) {
+                    dispatch(searchProduct(value));
+                  } else {
+                    dispatch(fetchProducts());
+                  }
+                }}
               />
             </div>
           </div>
 
           <Table
             columns={columns}
-            dataSource={data}
+            dataSource={tableData}
             pagination={{
               pageSize: 8,
             }}
@@ -294,6 +156,7 @@ function Products () {
         </div>
       </main>
     </div>
-  
-} 
-export default Products
+  );
+}
+
+export default Products;
