@@ -8,6 +8,7 @@ import Reviews from "./pages/Reviews";
 import Settings from "./pages/Settings";
 import AddProduct from "./pages/AddProduct";
 import ProductDetails from './pages/ProductDetails';
+import Posts from "./pages/Posts"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/products/add" element={<AddProduct />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/products/:id" element={<ProductDetails />} />
+      <Route path="/posts" element={<Posts />} />
     </Routes>
   );
 }

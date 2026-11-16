@@ -71,32 +71,36 @@ function Products() {
 
  const columns = [
    {
-     title: 'Order',
-     dataIndex: 'userId',
-     key: 'userId',
+     title: 'Name',
+     dataIndex: 'name',
+     key: 'name',
    },
    {
-     title: 'Total',
-     dataIndex: 'total',
-     key: 'total',
+     title: 'SKU',
+     dataIndex: 'sku',
+     key: 'sku',
    },
    {
-     title: 'Discounted Total',
-     dataIndex: 'discountedTotal',
-     key: 'discountedTotal',
+     title: 'Price',
+     dataIndex: 'price',
+     key: 'price',
    },
    {
-     title: 'Products',
-     dataIndex: 'totalProducts',
-     key: 'totalProducts',
+     title: 'Stock',
+     dataIndex: 'stock',
+     key: 'stock',
    },
    {
-     title: 'Quantity',
-     dataIndex: 'totalQuantity',
-     key: 'totalQuantity',
+     title: 'Categories',
+     dataIndex: 'categories',
+     key: 'categories',
+   },
+   {
+     title: 'Action',
+     dataIndex: 'action',
+     key: 'action',
    },
  ];
-
 
   return (
     <div className="flex min-h-screen bg-[#f6f6f6]">
