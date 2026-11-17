@@ -200,7 +200,7 @@ function Coustomers() {
                 title: 'Admin',
               },
               {
-                title: 'Products',
+                title: 'Customers',
               },
             ]}
           />
@@ -208,12 +208,12 @@ function Coustomers() {
 
         <div className="bg-white  overflow-hidden">
           <div className="flex justify-between items-center p-6 border-b">
-            <h1 className="text-xl font-bold">Products</h1>
+            <h1 className="text-xl font-bold">Customers</h1>
 
             <div className="flex gap-3">
               <Input
                 prefix={<SearchOutlined />}
-                placeholder="Search products"
+                placeholder="Search customers"
                 className="w-52"
               />
             </div>

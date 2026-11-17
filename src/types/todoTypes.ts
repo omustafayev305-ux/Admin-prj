@@ -1,0 +1,17 @@
+export type Todo ={
+  id:number;
+  todo:string;
+  completed:boolean;
+  userId:number;
+};
+export type TodosResponse ={
+ todos:Todo[];
+ total:number;
+ skip:number;
+ limit:number;
+};
+export type TodosState ={
+  todos: Todo[];
+  loading:boolean;
+  error:string|null
+};

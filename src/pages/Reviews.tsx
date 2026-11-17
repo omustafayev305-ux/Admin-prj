@@ -169,7 +169,7 @@ return(
                 title: "Admin",
               },
               {
-                title: "Products",
+                title: "Reviews",
               },
             ]}
           />
@@ -184,7 +184,7 @@ return(
             <div className="flex gap-3">
               <Input
                 prefix={<SearchOutlined/>}
-                placeholder="Search products"
+                placeholder="Search reviews"
                 className="w-52"
               />
             </div>

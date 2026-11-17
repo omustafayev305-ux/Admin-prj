@@ -45,11 +45,11 @@ function Sidebar() {
         </div>
         <div>
           <Link
-            to="/Coustomers"
+            to="/Customers"
             className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100"
           >
             <TeamOutlined />
-            <span>{t('Coustomers')}</span>
+            <span>{t('Customers')}</span>
           </Link>
         </div>
 
